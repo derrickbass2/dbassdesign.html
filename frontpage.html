@@ -1,0 +1,50 @@
+<div class="div">
+  <picture>
+    <source srcset="
+      https://cdn.builder.io/api/v1/image/assets%2FTEMP%2F7d29f9173f304b17b1a1544c96c721b2?format=webp&amp;width=100 100w,
+      https://cdn.builder.io/api/v1/image/assets%2FTEMP%2F7d29f9173f304b17b1a1544c96c721b2?format=webp&amp;width=200 200w,
+      https://cdn.builder.io/api/v1/image/assets%2FTEMP%2F7d29f9173f304b17b1a1544c96c721b2?format=webp&amp;width=400 400w,
+      https://cdn.builder.io/api/v1/image/assets%2FTEMP%2F7d29f9173f304b17b1a1544c96c721b2?format=webp&amp;width=800 800w,
+      https://cdn.builder.io/api/v1/image/assets%2FTEMP%2F7d29f9173f304b17b1a1544c96c721b2?format=webp&amp;width=1200 1200w,
+      https://cdn.builder.io/api/v1/image/assets%2FTEMP%2F7d29f9173f304b17b1a1544c96c721b2?format=webp&amp;width=1600 1600w,
+      https://cdn.builder.io/api/v1/image/assets%2FTEMP%2F7d29f9173f304b17b1a1544c96c721b2?format=webp&amp;width=2000 2000w,
+      https://cdn.builder.io/api/v1/image/assets%2FTEMP%2F7d29f9173f304b17b1a1544c96c721b2"
+      type="image/webp">
+    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets%2FTEMP%2F7d29f9173f304b17b1a1544c96c721b2" srcset="
+      https://cdn.builder.io/api/v1/image/assets%2FTEMP%2F7d29f9173f304b17b1a1544c96c721b2?width=100 100w,
+      https://cdn.builder.io/api/v1/image/assets%2FTEMP%2F7d29f9173f304b17b1a1544c96c721b2?width=200 200w,
+      https://cdn.builder.io/api/v1/image/assets%2FTEMP%2F7d29f9173f304b17b1a1544c96c721b2?width=400 400w,
+      https://cdn.builder.io/api/v1/image/assets%2FTEMP%2F7d29f9173f304b17b1a1544c96c721b2?width=800 800w,
+      https://cdn.builder.io/api/v1/image/assets%2FTEMP%2F7d29f9173f304b17b1a1544c96c721b2?width=1200 1200w,
+      https://cdn.builder.io/api/v1/image/assets%2FTEMP%2F7d29f9173f304b17b1a1544c96c
+<div id="json-data"></div>
+<script>
+  // Create a new XMLHttpRequest object
+  let xhr = new XMLHttpRequest();
+
+  // Set the path to the JSON file
+  xhr.open("GET", "DBASSDESIGNWEBpage.builder.json");
+
+  // Set the response type to JSON
+  xhr.responseType = "json";
+
+  // When the XMLHttpRequest is finished, parse the JSON and display it
+  xhr.onload = function () {
+    // Check that the request was successful
+    if (xhr.status === 200) {
+      // Parse the JSON data
+      let jsonData = xhr.response;
+
+      // Get a reference to the HTML element where we want to display the data
+      let jsonDataElem = document.getElementById("json-data");
+
+      // Display the data in the HTML element
+      jsonDataElem.innerHTML = JSON.stringify(jsonData);
+    } else {
+      console.error(xhr.statusText);
+    }
+  };
+
+  // Send the XMLHttpRequest
+  xhr.send();
+</script>
